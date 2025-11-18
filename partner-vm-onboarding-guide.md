@@ -2,11 +2,11 @@
 
 This guide explains how to connect your VM to the COP-PILOT CI/CD stack so Jenkins can execute pipelines on your machine over the SIF (OpenZiti) network.
 
-Estimated completion time: ~15 minutes
+⏱️Estimated completion time: ~15 minutes
 
 ---
 
-## 1. Create an Identity for Your VM in CloudZiti
+## 1. 🆔 Create an Identity for Your VM in CloudZiti
 
 1. Open the CloudZiti console:  
    **https://cop-pilot.cloudziti.io**
@@ -37,9 +37,9 @@ You’ll use this file on your VM to enroll the identity.
 
 ---
 
-## 2. Install Ziti Edge Tunnel and Enroll the Identity on Your VM
+## 2. 🧩 Install Ziti Edge Tunnel and Enroll the Identity on Your VM
 
-### 2.1 Copy the JWT to Your VM
+###  2.1 📥 Copy the JWT to Your VM
 
 On your local machine, copy the downloaded `.jwt` file to your VM (e.g. using `scp` or `sftp`), into the `~/ziti` directory:
 
@@ -63,7 +63,7 @@ For example:
 
 ---
 
-### 2.2 Install prerequisites
+### 2.2 📦 Install prerequisites
 
 On your VM:
 
@@ -74,7 +74,7 @@ sudo apt install -y openjdk-21-jdk unzip
 
 ---
 
-### 2.3 Download the Ziti Edge Tunnel binary
+### 2.3 ⬇️ Download the Ziti Edge Tunnel binary
 
 ```bash
 cd ~/ziti
@@ -110,7 +110,7 @@ You should see a version string (for example `v1.7.12`).
 
 ---
 
-### 2.4 Enroll your identity
+### 2.4 🔐 Enroll your identity
 
 From `~/ziti`:
 
@@ -137,7 +137,7 @@ This `.json` file is the enrolled identity that the tunnel will use.
 
 ---
 
-### 2.5 Run the tunnel in the background
+### 2.5 🚀 Run the tunnel in the background
 
 Start the tunnel as a background process:
 
@@ -166,7 +166,7 @@ Finally, you can verify in the CloudZiti GUI that your identity is **Online** (g
 
 ---
 
-## 3. Create an OpenZiti Service so Jenkins Can SSH into Your VM
+## 3. 🔧 Create an OpenZiti Service so Jenkins Can SSH into Your VM
 
 Now that your VM identity is enrolled and online, the next step is to **expose SSH on your VM through OpenZiti**, so that the Jenkins controller can connect securely without any public IP or firewall changes.
 
@@ -230,7 +230,7 @@ In the CloudZiti console:
 
 ---
 
-## 4. Create the Jenkins User and Configure SSH Access
+## 4. 👤 Create the Jenkins User and Configure SSH Access
 
 ### 4.1 Create the user
 
@@ -262,7 +262,7 @@ chmod 600 ~/.ssh/authorized_keys
 
 ---
 
-## 5. Final Step – Register Your VM as a Jenkins Node
+## 5. 🔗 Final Step – Register Your VM as a Jenkins Node
 
 Once everything is set up, email:
 
