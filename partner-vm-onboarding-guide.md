@@ -3,6 +3,7 @@
 This guide explains how to connect your VM to the COP-PILOT CI/CD stack so Jenkins can execute pipelines on your machine over the SIF (OpenZiti) network.
 
 Estimated completion time: ~15 minutes
+
 ---
 
 ## 1. Create an Identity for Your VM in CloudZiti
