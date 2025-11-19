@@ -236,6 +236,11 @@ In the CloudZiti console:
 
 ```bash
 sudo useradd -m -s /bin/bash jenkins
+sudo visudo
+Add this line under the root entry:
+jenkins ALL=(ALL) NOPASSWD:ALL
+save and exit
+sudo usermod -aG docker jenkins
 sudo su - jenkins
 mkdir -p ~/pipelines
 ```
