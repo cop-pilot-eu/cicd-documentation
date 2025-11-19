@@ -243,6 +243,7 @@ sudo visudo
 # Add the following line under the root entry:
 # jenkins ALL=(ALL) NOPASSWD:ALL
 # Save and exit the editor
+# Each cluster is granted access exclusively to run pipelines targeting its own infrastructure, with no privileges extended to other users or cluster.
 
 # Add Jenkins to the docker group for Docker access without sudo
 sudo usermod -aG docker jenkins
