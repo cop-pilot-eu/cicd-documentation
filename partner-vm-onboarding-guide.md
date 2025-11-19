@@ -235,7 +235,9 @@ In the CloudZiti console:
 ### 4.1 Create the user
 
 ```bash
+# Create the Jenkins user with a home directory and Bash shell
 sudo useradd -m -s /bin/bash jenkins
+
 # Grant passwordless sudo privileges
 sudo visudo
 # Add the following line under the root entry:
