@@ -236,12 +236,19 @@ In the CloudZiti console:
 
 ```bash
 sudo useradd -m -s /bin/bash jenkins
+# Grant passwordless sudo privileges
 sudo visudo
-Add this line under the root entry:
-jenkins ALL=(ALL) NOPASSWD:ALL
-save and exit
+# Add the following line under the root entry:
+# jenkins ALL=(ALL) NOPASSWD:ALL
+# Save and exit the editor
+
+# Add Jenkins to the docker group for Docker access without sudo
 sudo usermod -aG docker jenkins
+
+# Switch to the Jenkins user
 sudo su - jenkins
+
+# Create pipelines directory
 mkdir -p ~/pipelines
 ```
 
