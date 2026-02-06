@@ -77,8 +77,6 @@ sudo apt install -y openjdk-21-jdk unzip
 ### 2.3 ⬇️ VM Identity Enrollment
 
 
-## 3️⃣ Execute the Enrollment Script
-
 Make the script executable:
 
 ```bash
