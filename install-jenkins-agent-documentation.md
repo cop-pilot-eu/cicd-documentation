@@ -74,88 +74,23 @@ sudo apt install -y openjdk-21-jdk unzip
 
 ---
 
-### 2.3 ⬇️ Download the Ziti Edge Tunnel binary
+### 2.3 ⬇️ VM Identity Enrollment
+
+
+## 3️⃣ Execute the Enrollment Script
+
+Make the script executable:
 
 ```bash
-cd ~/ziti
-
-# Download a specific release of the Linux x86_64 tunnel
-curl -L -o ziti-edge-tunnel.zip   https://github.com/openziti/ziti-tunnel-sdk-c/releases/download/v1.7.12/ziti-edge-tunnel-Linux_x86_64.zip
-
-# Unzip it
-unzip ziti-edge-tunnel.zip
+chmod +x ziti_install_enroll_and_tunnel.sh
 ```
 
-You should now see a `ziti-edge-tunnel` binary in the folder:
+Run the script, passing the JWT filename as input:
 
 ```bash
-ls
-# <identity-name>.jwt  ziti-edge-tunnel  ziti-edge-tunnel.zip
+./ziti_install_enroll_and_tunnel.sh OpenSlice-central-domain.jwt --nohup
 ```
 
-Move it into your `PATH` and make it executable:
-
-```bash
-sudo mv ./ziti-edge-tunnel /usr/local/bin/
-sudo chmod +x /usr/local/bin/ziti-edge-tunnel
-```
-
-Verify:
-
-```bash
-ziti-edge-tunnel version
-```
-
-You should see a version string (for example `v1.7.12`).
-
----
-
-### 2.4 🔐 Enroll your identity
-
-From `~/ziti`:
-
-```bash
-cd ~/ziti
-
-ziti-edge-tunnel enroll   -j <identity-name>.jwt   -i <identity-name>.json
-```
-
-Example:
-
-```bash
-ziti-edge-tunnel enroll   -j doc-vm.jwt   -i doc-vm.json
-```
-
-If enrollment is successful, you will see a new `.json` file:
-
-```bash
-ls
-# doc-vm.jwt  doc-vm.json  ziti-edge-tunnel.zip
-```
-
-This `.json` file is the enrolled identity that the tunnel will use.
-
----
-
-### 2.5 🚀 Run the tunnel in the background
-
-Start the tunnel as a background process:
-
-```bash
-sudo nohup ziti-edge-tunnel run -i ~/ziti/<identity-name>.json   > ~/ziti/ziti-<identity-name>.log 2>&1 &
-```
-
-Example:
-
-```bash
-sudo nohup ziti-edge-tunnel run -i ~/ziti/doc-vm.json   > ~/ziti/ziti-doc-vm.log 2>&1 &
-```
-
-Check that it is running:
-
-```bash
-ps aux | grep ziti-edge-tunnel
-```
 
 
 Finally, you can verify in the CloudZiti GUI that your identity is **Online** (green dot).
