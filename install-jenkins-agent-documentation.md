@@ -113,7 +113,7 @@ In the CloudZiti console:
 
 - **Service Name:**
   ```text
-  doc-vm-login
+  your-identity-cicd-login
   ```
 
 - **Service Attributes:**
@@ -131,7 +131,7 @@ In the CloudZiti console:
   - SDK only: **No**
   - Hostname:  
     ```text
-    doc-vm-login.sif
+    your-identity-cicd-login.sif
     ```
   - Port:  
     ```text
