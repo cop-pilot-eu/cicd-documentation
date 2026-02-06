@@ -76,7 +76,7 @@ sudo apt install -y openjdk-21-jdk unzip
 
 ### 2.3 ⬇️ VM Identity Enrollment
 
-
+[Ziti script](https://github.com/cop-pilot-eu/cicd-documentation/blob/main/ziti_install_enroll_and_tunnel.sh)
 Make the script executable:
 
 ```bash
