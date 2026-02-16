@@ -1,5 +1,4 @@
-# 🚀 COP-PILOT Cluster Integration & Automation Guide
-
+# 🚀 COP-PILOT Clusters' Documentation
 This document helps clusters navigate the available documentation,
 automation scripts, and CI/CD pipelines required to connect to the
 COP-PILOT platform and use its services.
