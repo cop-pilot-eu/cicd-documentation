@@ -4,13 +4,6 @@ This document helps clusters navigate the available documentation,
 automation scripts, and CI/CD pipelines required to connect to the
 COP-PILOT platform and use its services.
 
-It is structured by platform layer:
-
--   SIF Layer
--   DO Layer (Domain Orchestrator)
--   ESO Layer
--   Data Management Layer
-
 ------------------------------------------------------------------------
 
 # 🟣 SIF Layer
