@@ -64,6 +64,8 @@ http://`<master-node-ip>`{=html}:`<nodeport>`{=html}
 
 To disable SSL enforcement:
 
+```bash
+
 kubectl exec -it `<keycloak_pod_name>`{=html} -n openslice -- /bin/sh
 
 cd /opt/jboss/keycloak/bin/
@@ -72,6 +74,9 @@ cd /opt/jboss/keycloak/bin/
 --realm master --user admin --password '`<YOUR_ADMIN_PASS>`{=html}'
 ./kcadm.sh update realms/openslice -s sslRequired=NONE ./kcadm.sh update
 realms/master -s sslRequired=NONE
+
+
+```
 
 ------------------------------------------------------------------------
 
