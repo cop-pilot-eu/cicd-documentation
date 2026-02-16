@@ -55,7 +55,7 @@ etc.), it is recommended to:
 
 Example root URL:
 
-http://`<master-node-ip>`:`<nodeport>`
+http://<master-node-ip>:<nodeport>
 
 ------------------------------------------------------------------------
 
@@ -69,7 +69,7 @@ kubectl exec -it `<keycloak_pod_name>` -n openslice -- /bin/sh
 cd /opt/jboss/keycloak/bin/
 
 ./kcadm.sh config credentials --server http://localhost:8080/auth
---realm master --user admin --password '`<YOUR_ADMIN_PASS>`'
+--realm master --user admin --password <YOUR_ADMIN_PASS>
 ./kcadm.sh update realms/openslice -s sslRequired=NONE ./kcadm.sh update
 realms/master -s sslRequired=NONE
 ```
