@@ -59,7 +59,7 @@ http://<master-node-ip>:<nodeport>
 ```
 ------------------------------------------------------------------------
 
-## ⚠️ Keycloak HTTPS Issue (Kubernetes Deployment)
+## ⚠️ Keycloak HTTPS Disable (Kubernetes Deployment)
 
 To disable SSL enforcement:
 
