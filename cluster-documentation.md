@@ -54,9 +54,9 @@ etc.), it is recommended to:
 -   Use NGINX Ingress
 
 Example root URL:
-
-'http://<master-node-ip>:<nodeport>'
-
+```bash
+http://<master-node-ip>:<nodeport>
+```
 ------------------------------------------------------------------------
 
 ## ⚠️ Keycloak HTTPS Issue (Kubernetes Deployment)
