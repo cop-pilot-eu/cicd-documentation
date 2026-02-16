@@ -82,7 +82,8 @@ realms/master -s sslRequired=NONE
 
 Ensure the CRIDGE component is properly configured:
 https://osl.etsi.org/documentation/latest/getting_started/deployment/kubernetes/#cridge
-
+In case, you overlooked the CRIDGE step during the installation guide, it’s now time to validate that the Kubeconfig file of the Cluster (that will host the application) is provided.
+Validate that CRIDGE works properly. Log in to your OpenSlice instance (as admin user), navigate to Resources -> Resources Specifications -> List Resource Specifications, and you should be able to see Kubernetes resources ending with @{your_cluster_master_node_IP}:6443/
 ------------------------------------------------------------------------
 
 ## 🚀 Step 2 --- Install ArgoCD
@@ -97,19 +98,20 @@ https://osl.etsi.org/documentation/latest/service_design/kubernetes/design_helm_
 Guide:
 https://argo-cd.readthedocs.io/en/stable/user-guide/private-repositories/#helm
 
-Project field should be set to: default
+Once ArgoCD is installed, you need to log in to ArgoCD UI and add the COP-PILOT Helm Chart Repository to the known repo list (guide). Project field should be “default”.
+o	Ιf you have any doubts about filling in the fields, try the command `helm registry login {registry name} –username {username} –password {password}` until it succeeds. Then input these values in the ArgoUI. In case of an OCI registry, remember to tick the box “Enable OCI”.
+
 
 ------------------------------------------------------------------------
 
 ## 🛒 Step 4 --- Order & Deploy the Service
 
-Navigate to: Manage Services → Service Orders
+-	Once the repo is added in ArgoCD and the Application resource is available in your OpenSlice instance (see Resource Specifications List), you are ready to design the Service, using the guide. The YAML definition should be identical with the guide, except for the source property (repoURL, targetRevision, chart, and helm.values).
 
-Change state from: INITIAL
+-	When it comes to catalog exposure, you may edit what your domain exposes from the respective menus (Services -> Manage Services -> Service Catalogs & Service Categories). Your changes will be available at the Service Marketplace tab and your Service Catalog Explorer section.
+o	See similar naming conventions (for Catalogs/Categories/Specifications) with other clusters (link in Slack Cluster 3A channel).
 
-To: ACKNOWLEDGED
-
-Deployment will proceed automatically.
+-	Once the application service specification is exposed, as you wish, you need to browse the Service Marketplace -> select the Specification -> Add to the Cart -> Checkout the Service Order. As admin (default user for you), you must navigate to the issued Service Order (Manage Services -> Service Orders -> click the last one). A new Order is always in the “INITIAL” state. The admin must click the “edit” button, change the state to “ACKNOWLEDGED” (and optionally the duration, if needed), and then the deployment is automated, based on your design. 
 
 ------------------------------------------------------------------------
 
