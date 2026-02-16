@@ -55,7 +55,7 @@ etc.), it is recommended to:
 
 Example root URL:
 
-http://<master-node-ip>:<nodeport>
+'http://<master-node-ip>:<nodeport>'
 
 ------------------------------------------------------------------------
 
