@@ -100,8 +100,8 @@ https://osl.etsi.org/documentation/latest/service_design/kubernetes/design_helm_
 Guide:
 https://argo-cd.readthedocs.io/en/stable/user-guide/private-repositories/#helm
 
-Once ArgoCD is installed, you need to log in to ArgoCD UI and add the COP-PILOT Helm Chart Repository to the known repo list (guide). Project field should be “default”.
-o	Ιf you have any doubts about filling in the fields, try the command `helm registry login {registry name} –username {username} –password {password}` until it succeeds. Then input these values in the ArgoUI. In case of an OCI registry, remember to tick the box “Enable OCI”.
+- Once ArgoCD is installed, you need to log in to ArgoCD UI and add the COP-PILOT Helm Chart Repository to the known repo list (guide). Project field should be “default”.  
+Ιf you have any doubts about filling in the fields, try the command `helm registry login {registry name} –username {username} –password {password}` until it succeeds. Then input these values in the ArgoUI. In case of an OCI registry, remember to tick the box “Enable OCI”.
 
 
 ------------------------------------------------------------------------
