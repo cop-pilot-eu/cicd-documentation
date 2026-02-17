@@ -120,6 +120,12 @@ o	See similar naming conventions (for Catalogs/Categories/Specifications) with o
 
 # 🟡 ESO Layer (Multi-Domain Orchestrator Peering)
 
+For the peering with the [Multi-Domain Orchestrator](https://portal.multi-domain-orchestrator.cop-pilot.rid-intrasoft.eu/), pipelines have been created to automate the process.  
+
+First, a pipeline is available that automatically creates a service to expose your OpenSlice instance in CloudZiti. A second pipeline handles the peering of your OpenSlice instance with the Multi-Domain Orchestrator.  
+
+Once your OpenSlice (OS) instance is deployed, you can contact the NETC team to coordinate the execution of these pipelines.  
+
 Pipeline documentation:
 
 OpenSlice Service Creation:
