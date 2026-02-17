@@ -137,16 +137,17 @@ https://github.com/cop-pilot-eu/platform-integration-pipelines/blob/main/service
 ------------------------------------------------------------------------
 
 # 🟢 Data Management Layer
+There is also a need for context brokers. For this purpose, we have created pipelines that can automatically deploy a context broker to a dedicated VM
 
 ## 🧠 Context Broker Deployment
 
-Pipelines:
+This is the Pipelines for automates deployment of the Context Brokers:
 https://github.com/cop-pilot-eu/platform-integration-pipelines/tree/main/data-management-pipelines/orion-context-broker
 
 ------------------------------------------------------------------------
 
 ## ⚙️ Jenkins Agent Setup
-
+To run these pipelines for context brokers, you must first follow this documentation to connect your VM to the COP-PILOT CI/CD services. Once connected, Jenkins can deploy the context broker on your VM.  
 Documentation:
 https://github.com/cop-pilot-eu/cicd-documentation/blob/main/install-jenkins-agent-documentation.md
 
