@@ -80,10 +80,11 @@ realms/master -s sslRequired=NONE
 
 ## ✅ Step 1 --- Validate CRIDGE Component
 
-Ensure the CRIDGE component is properly configured:
+- Ensure the CRIDGE component is properly configured:
 https://osl.etsi.org/documentation/latest/getting_started/deployment/kubernetes/#cridge  
-In case, you overlooked the CRIDGE step during the installation guide, it’s now time to validate that the Kubeconfig file of the Cluster (that will host the application) is provided.  
-Validate that CRIDGE works properly.   Log in to your OpenSlice instance (as admin user), navigate to Resources -> Resources Specifications -> List Resource Specifications, and you should be able to see Kubernetes resources ending with @{your_cluster_master_node_IP}:6443/
+- In case, you overlooked the CRIDGE step during the installation guide, it’s now time to validate that the Kubeconfig file of the Cluster (that will host the application) is provided.  
+- Validate that CRIDGE works properly.
+  Log in to your OpenSlice instance (as admin user), navigate to Resources -> Resources Specifications -> List Resource Specifications, and you should be able to see Kubernetes resources ending with @{your_cluster_master_node_IP}:6443/
 
 ------------------------------------------------------------------------
 
