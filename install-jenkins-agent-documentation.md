@@ -141,7 +141,7 @@ In the CloudZiti console:
 - **Hosting Configuration → What identities can host this service?**  
   Add:
   ```text
-  doc-vm
+  your-identity
   ```
 
 - **Where should traffic be sent?**
