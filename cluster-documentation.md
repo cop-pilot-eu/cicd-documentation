@@ -118,9 +118,9 @@ o	See similar naming conventions (for Catalogs/Categories/Specifications) with o
 
 ------------------------------------------------------------------------
 
-# 🟡 ESO Layer (Multi-Domain Orchestrator Peering)
+# 🟡 ESO Layer (Hyper Orchestrator Peering)
 
-For the peering with the [Multi-Domain Orchestrator](https://portal.multi-domain-orchestrator.cop-pilot.rid-intrasoft.eu/), pipelines have been created to automate the process.  
+For the peering with the [HypO](https://portal.multi-domain-orchestrator.cop-pilot.rid-intrasoft.eu/), pipelines have been created to automate the process.  
 
 First, a pipeline is available that automatically creates a service to expose your OpenSlice instance in CloudZiti. A second pipeline handles the peering of your OpenSlice instance with the Multi-Domain Orchestrator.  
 
