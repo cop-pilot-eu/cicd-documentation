@@ -33,14 +33,9 @@ https://github.com/cop-pilot-eu/platform-integration-pipelines/tree/main/sif-lay
 
 A README file with usage instructions is included in the repository.  
 
-For your OpenSlice instance identity, please use a name in the following format:
+For your OpenSlice instance identity, please use a name in the following format: openslice-clx-company
 
-openslice-clx-company
-
-Where clx is your cluster number and company is your company name.
-
-Example:
-openslice-cl2-upv
+Where clx is your cluster number and company is your company name. Example: openslice-cl2-upv
 
 ------------------------------------------------------------------------
 
