@@ -31,7 +31,16 @@ automation script has been created.
 Repository location:
 https://github.com/cop-pilot-eu/platform-integration-pipelines/tree/main/sif-layer-pipelines/identity-script
 
-A README file with usage instructions is included in the repository.
+A README file with usage instructions is included in the repository.  
+
+For your OpenSlice instance identity, please use a name in the following format:
+
+openslice-clx-company
+
+Where clx is your cluster number and company is your company name.
+
+Example:
+openslice-cl2-upv
 
 ------------------------------------------------------------------------
 
