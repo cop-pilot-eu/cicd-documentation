@@ -1,6 +1,9 @@
 pipeline {
-    agent doc-vm
-
+    agent {
+         node {
+            label 'doc-vm'
+         } 
+    }
     environment {
         NAMESPACE = 'testing'
     }
