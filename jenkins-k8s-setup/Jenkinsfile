@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent doc-vm
 
     environment {
         NAMESPACE = 'testing'
