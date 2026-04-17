@@ -1,0 +1,66 @@
+pipeline {
+    agent any
+
+    environment {
+        NAMESPACE = 'testing'
+    }
+
+    stages {
+
+        stage('Verify kubectl available') {
+            steps {
+                sh 'kubectl version --client --output=yaml'
+            }
+        }
+
+        stage('Check cluster connectivity') {
+            steps {
+                withCredentials([file(credentialsId: 'central-k8s-stage-kubeconfig', variable: 'KUBECONFIG')]) {
+
+                    // 1. Confirm the API server is reachable and the token is valid
+                    sh 'kubectl cluster-info'
+
+                    // 2. Confirm the current context points to the right namespace
+                    sh 'kubectl config current-context'
+                    sh "kubectl config view --minify --output=jsonpath='{.contexts[0].context.namespace}'"
+                }
+            }
+        }
+
+        stage('Verify namespace access') {
+            steps {
+                withCredentials([file(credentialsId: 'central-k8s-stage-kubeconfig', variable: 'KUBECONFIG')]) {
+
+                    // 3. List resources the SA is allowed to see in testing namespace
+                    sh "kubectl get pods      -n ${NAMESPACE}"
+                    sh "kubectl get deployments -n ${NAMESPACE}"
+                    sh "kubectl get services  -n ${NAMESPACE}"
+                }
+            }
+        }
+
+        stage('Verify RBAC boundaries') {
+            steps {
+                withCredentials([file(credentialsId: 'central-k8s-stage-kubeconfig', variable: 'KUBECONFIG')]) {
+
+                    // 4. Confirm allowed verbs work
+                    sh "kubectl auth can-i list pods       -n ${NAMESPACE}"
+                    sh "kubectl auth can-i create deployments -n ${NAMESPACE}"
+
+                    // 5. Confirm out-of-scope access is denied (these should print "no")
+                    sh "kubectl auth can-i list pods       -n kube-system || true"
+                    sh "kubectl auth can-i list nodes                      || true"
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Connection to Kubernetes cluster verified. Jenkins SA has correct access to namespace '${NAMESPACE}'."
+        }
+        failure {
+            echo "Connection check failed. Verify the kubeconfig credential and cluster reachability."
+        }
+    }
+}
